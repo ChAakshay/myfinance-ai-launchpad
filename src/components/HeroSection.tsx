@@ -28,8 +28,7 @@ const HeroSection = () => {
           id: Date.now(), 
           email: email.trim(),
           created_at: new Date().toISOString() 
-        })
-        .select();
+        });
       
       if (error) throw error;
       
