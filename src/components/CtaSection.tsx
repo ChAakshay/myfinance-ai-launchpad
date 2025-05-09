@@ -3,21 +3,33 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const CtaSection = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      // Save email to Supabase
+      const { error } = await supabase
+        .from('mail')
+        .insert({ id: Date.now(), created_at: new Date().toISOString() })
+        .select();
+      
+      if (error) throw error;
+      
       toast.success("You've been added to our waitlist!");
       setEmail("");
+    } catch (error) {
+      console.error("Error saving email:", error);
+      toast.error("There was a problem adding you to the waitlist. Please try again.");
+    } finally {
       setIsSubmitting(false);
-    }, 800);
+    }
   };
 
   return (
