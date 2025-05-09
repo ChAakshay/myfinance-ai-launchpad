@@ -14,8 +14,8 @@ const benefits = [
     icon: BarChart3
   },
   {
-    title: "Built for real people — not accountants",
-    description: "Simplified interface designed for everyday users, not financial experts or accountants.",
+    title: "Made for people who value time",
+    description: "Forget pricey consultants—get clear, hassle-free financial guidance in minutes, no jargon, no stress.",
     icon: User
   }
 ];
