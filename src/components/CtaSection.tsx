@@ -11,13 +11,23 @@ const CtaSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!email || !email.includes('@')) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    
     setIsSubmitting(true);
     
     try {
       // Save email to Supabase
       const { error } = await supabase
         .from('mail')
-        .insert({ id: Date.now(), created_at: new Date().toISOString() })
+        .insert({ 
+          id: Date.now(), 
+          email: email.trim(),
+          created_at: new Date().toISOString() 
+        })
         .select();
       
       if (error) throw error;
