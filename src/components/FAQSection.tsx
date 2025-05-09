@@ -23,10 +23,16 @@ const faqs = [
     question: "What does it cost?",
     answer: "MyFinance AI will offer both free and premium tiers. The free version includes basic budgeting and AI assistance, while premium plans will offer advanced features like investment tracking, unlimited accounts, and custom financial planning tools."
   },
+ 
   {
+    question: "Can the AI store and read my financial data?",
+    answer: "No — the AI processes your data in real-time to provide answers but doesn’t store or remember anything unless you explicitly allow it."
+  },
+   {
     question: "When is MyFinance AI launching?",
     answer: "We're currently in private beta and plan to launch publicly in Q3 2025. Join our waitlist to get early access and be the first to know when we launch!"
   }
+  
 ];
 
 const FAQSection = () => {
