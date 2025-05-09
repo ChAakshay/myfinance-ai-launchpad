@@ -22,10 +22,10 @@ const DashboardPreview = () => {
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
-              <p className="text-sm">How much did I spend on dining last month compared to my budget?</p>
+              <p className="text-sm">Can I afford a vacation this year?</p>
             </div>
             <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl mt-3 ml-8">
-              <p className="text-sm">You spent $342 on dining last month, which is 14% under your monthly budget of $400. Great job staying under budget!</p>
+              <p className="text-sm">Let’s check: if your planned vacation costs under 10% of your annual income and doesn’t hurt your emergency or investment funds, you’re good to go. </p>
             </div>
           </div>
         </div>
